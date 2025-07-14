@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.siakad.fragment_login"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_SecondFragment_to_fragment_beranda"
+            app:destination="@id/fragment_beranda" />
+    </fragment>
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.siakad.fragment_splash_screen"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment4"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_profile"
+        android:name="com.example.siakad.fragment_profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/fragment_absensi"
+        android:name="com.example.siakad.fragment_absensi"
+        android:label="fragment_absensi"
+        tools:layout="@layout/fragment_absensi" >
+        <action
+            android:id="@+id/action_fragment_absensi_to_kehadiran"
+            app:destination="@id/kehadiran" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_krs"
+        android:name="com.example.siakad.fragment_krs"
+        android:label="fragment_krs"
+        tools:layout="@layout/fragment_krs" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.siakad.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/fragment_jadwal_kuliah"
+        android:name="com.example.siakad.fragment_jadwal_kuliah"
+        android:label="fragment_jadwal_kuliah"
+        tools:layout="@layout/fragment_jadwal_kuliah" />
+    <fragment
+        android:id="@+id/fragment_beranda"
+        android:name="com.example.siakad.fragment_beranda"
+        android:label="fragment_beranda"
+        tools:layout="@layout/fragment_beranda" >
+        <action
+            android:id="@+id/action_fragment_beranda_to_fragment_profile"
+            app:destination="@id/fragment_profile" />
+        <action
+            android:id="@+id/action_fragment_beranda_to_fragment_absensi"
+            app:destination="@id/fragment_absensi" />
+        <action
+            android:id="@+id/action_fragment_beranda_to_fragment_jadwal_kuliah"
+            app:destination="@id/fragment_jadwal_kuliah" />
+        <action
+            android:id="@+id/action_fragment_beranda_to_fragment_krs"
+            app:destination="@id/fragment_krs" />
+        <action
+            android:id="@+id/action_fragment_beranda_to_ewallet"
+            app:destination="@id/ewallet" />
+        <action
+            android:id="@+id/action_fragment_beranda_to_nilai2"
+            app:destination="@id/nilai2" />
+        <action
+            android:id="@+id/action_fragment_beranda_to_tugas2"
+            app:destination="@id/tugas2" />
+    </fragment>
+    <fragment
+        android:id="@+id/ewallet"
+        android:name="com.example.siakad.ewallet"
+        android:label="fragment_ewallet"
+        tools:layout="@layout/fragment_ewallet" />
+    <fragment
+        android:id="@+id/kehadiran"
+        android:name="com.example.siakad.kehadiran"
+        android:label="fragment_kehadiran"
+        tools:layout="@layout/fragment_kehadiran" />
+    <fragment
+        android:id="@+id/nilai2"
+        android:name="com.example.siakad.Nilai"
+        android:label="fragment_nilai"
+        tools:layout="@layout/fragment_nilai" />
+    <fragment
+        android:id="@+id/tugas2"
+        android:name="com.example.siakad.Tugas"
+        android:label="fragment_tugas"
+        tools:layout="@layout/fragment_tugas" />
+</navigation>
