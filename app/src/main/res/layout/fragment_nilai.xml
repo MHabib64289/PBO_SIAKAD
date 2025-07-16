@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Nilai">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_nilai"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/panah_black"
+            app:title="Transkrip Nilai"
+            app:titleCentered="true"
+            app:titleTextColor="@color/black" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/white">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:padding="20dp"
+                android:hint="Semester 5">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autocomplete_semester"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:padding="16dp"
+                    tools:text="Semester Gasal 2024/2025" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="@color/grey_300"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/progress_ip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:progress="70"
+                        app:indicatorSize="100dp"
+                        app:trackThickness="8dp"
+                        app:trackCornerRadius="4dp"
+                        app:indicatorColor="@color/purple_500"
+                        app:trackColor="@color/grey_300"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/tv_ip_value_circle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3.70"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/progress_ip"
+                        app:layout_constraintEnd_toEndOf="@id/progress_ip"
+                        app:layout_constraintStart_toStartOf="@id/progress_ip"
+                        app:layout_constraintTop_toTopOf="@id/progress_ip" />
+
+                    <TextView
+                        android:id="@+id/tv_ip_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="IP Semester"
+                        android:layout_marginStart="16dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/progress_ip"
+                        app:layout_constraintTop_toTopOf="@id/progress_ip" />
+
+                    <TextView
+                        android:id="@+id/tv_predikat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Memuaskan"
+                        android:textColor="@color/purple_500"
+                        app:layout_constraintStart_toStartOf="@id/tv_ip_label"
+                        app:layout_constraintTop_toBottomOf="@id/tv_ip_label" />
+
+                    <TextView
+                        android:id="@+id/tv_sks_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="23 SKS Ditempuh"
+                        android:textSize="14sp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_predikat"
+                        app:layout_constraintStart_toStartOf="@id/tv_ip_label"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:padding="20dp"
+                android:hint="Semester 6">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autocomplete_semester_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:padding="16dp"
+                    tools:text="Semester Gasal 2024/2025" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progress_ip_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:progress="80"
+                    app:indicatorColor="@color/purple_500"
+                    app:indicatorSize="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:trackColor="@color/grey_300"
+                    app:trackCornerRadius="4dp"
+                    app:trackThickness="8dp"/>
+
+                <TextView
+                    android:id="@+id/tv_ip_value_circle_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3.80"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/progress_ip_2"
+                    app:layout_constraintEnd_toEndOf="@id/progress_ip_2"
+                    app:layout_constraintStart_toStartOf="@id/progress_ip_2"
+                    app:layout_constraintTop_toTopOf="@id/progress_ip_2" />
+
+                <TextView
+                    android:id="@+id/tv_ip_label_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="IP Semester"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/progress_ip_2"
+                    app:layout_constraintTop_toTopOf="@id/progress_ip_2" />
+
+                <TextView
+                    android:id="@+id/tv_predikat_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sangat Memuaskan"
+                    android:textColor="@color/purple_500"
+                    app:layout_constraintStart_toStartOf="@id/tv_ip_label_2"
+                    app:layout_constraintTop_toBottomOf="@id/tv_ip_label_2" />
+
+                <TextView
+                    android:id="@+id/tv_sks_label_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="24 SKS Ditempuh"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/tv_ip_label_2"
+                    app:layout_constraintTop_toBottomOf="@id/tv_predikat_2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F8FA"
+    tools:context=".Tugas">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_tugas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_tugas"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Daftar Tugas"
+            app:navigationIcon="@drawable/panah_black"
+            app:titleCentered="true"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Filter Tugas dengan ChipGroup -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleLine="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_semua"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Matkul"
+                    app:chipBackgroundColor="@color/purple_200" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_mendesak"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mendesak"
+                    app:chipBackgroundColor="@color/yellow_500" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_selesai"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selesai"
+                    app:chipBackgroundColor="@color/green_500" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_terlambat"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Terlambat"
+                    app:chipBackgroundColor="@color/red_500" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <!-- Tabel Daftar Tugas -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:id="@+id/table_layout_tugas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:stretchColumns="1,2">
+
+                <!-- Header Tabel -->
+                <TableRow android:background="@color/purple_200">
+                    <TextView  android:text="Mata Kuliah" />
+                    <TextView  android:text="Judul Tugas" />
+                    <TextView  android:text="Tenggat" />
+                    <TextView  android:text="Status" />
+                </TableRow>
+
+                <!-- Contoh Baris Data -->
+                <TableRow>
+                    <TextView  android:text="Fisika" />
+                    <TextView  android:text="Laporan Praktikum" />
+                    <TextView  android:text="10 Jul 2025" />
+                    <TextView  android:text="Mendesak" android:textColor="@color/orange_700" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView  android:text="Jaringan Komputer" />
+                    <TextView  android:text="Konfigurasi Subnetting" />
+                    <TextView  android:text="12 Jul 2025" />
+                    <TextView  android:text="Belum Selesai" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView  android:text="Statistika" />
+                    <TextView  android:text="Analisis Regresi" />
+                    <TextView  android:text="01 Jul 2025" />
+                    <TextView  android:text="Selesai" android:textColor="@color/green_700" />
+                </TableRow>
+
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
