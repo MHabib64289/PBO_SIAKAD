@@ -1,1 +1,9 @@
-.qodo
+# Abaikan folder build & file temporer saja
+.gradle/
+.idea/
+.qodo/
+build/
+local.properties
+
+# Jangan abaikan semua
+# Jangan pakai '*'
